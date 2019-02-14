@@ -1,17 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const db = require('../database/index.js')
+const path = require('path');
+const db = require('../database/index.js');
+
 const app = express();
 
 
 app.set('port', 3004);
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname + '/../public'));
+app.use(express.static(path.join(__dirname, '/../public')));
 
 app.get('/neighborhood/:neighborNum', (request, response) => {
-  console.log(request.params.neighborNum);
-  console.log('working!');
   db.getNeighborhoods((err, data) => {
     if (err) {
       throw (err);
@@ -19,10 +19,8 @@ app.get('/neighborhood/:neighborNum', (request, response) => {
       response.end(JSON.stringify(data));
     }
   });
-  // response.end(JSON.stringify({sup: "hi"}));
 });
 
 app.listen(app.get('port'), () => {
-  console.log('running!');
+  console.log(`listening on port ${app.get('port')}`);
 });
-
