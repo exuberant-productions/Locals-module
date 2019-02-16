@@ -149,6 +149,7 @@
   width: 300px;
   border: 1px solid #e8e9ea;
   border-radius: 4px;
+  margin: 20px;
 }
 
 
@@ -156,6 +157,7 @@
   
   min-height: 356px;
   min-width: 300px;
+  padding: 20px;
 }
 
 .h5 {
@@ -171,6 +173,7 @@
   font-size: 15px;
   margin-bottom: 5px;
   line-height: 22.5px;
+  
 }
 
 .question-stack {
@@ -330,4 +333,39 @@
 .see-more::after {
   font-family: shapes;
   content: '  ';
+}
+
+.statement {
+  font-size: 18px;
+  font-family: PostGrotesk;
+  font-weight: 600px;
+  line-height: 1.4;
+  padding-right: 10px;
+  margin-bottom: 5px;
+  color: #3b4144;
+}
+
+.reviews-container {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  list-style-type: none;
+  padding: 0px;
+  max-width: 606px;
+
+}
+
+.review-box {
+  min-height: 158px;
+  width: 500px;
+
+  border: 1px solid #cdd0d2;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #3b4144;
+  font-family: PostGrotesk;
+  line-height: 22.5px;
+  font-size: 15px;
 }

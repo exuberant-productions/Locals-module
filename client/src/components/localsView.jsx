@@ -30,6 +30,9 @@ class Locals extends React.Component {
             <div>
               <Features />
             </div>
+            <div>
+              <Reviews />
+            </div>
           </li>
         </ul>
       </div>
