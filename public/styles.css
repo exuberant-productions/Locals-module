@@ -5,11 +5,28 @@
   src: url('./fonts/ufonts.com_helvari.ttf');
 }
 
-@font-face {
-  font-family: 'postGrotesk';
-  src: url('./fonts/PostGrotesk-Book.ttf');
+@font-face{
+  font-family:PostGrotesk;
+  src:url(http://static.trulia-cdn.com/images/fonts/PostGroteskBook_20150623/PostGrotesk-Book.eot);
+  src:url(http://static.trulia-cdn.com/images/fonts/PostGroteskBook_20150623/PostGrotesk-Book.eot?#iefix) format("embedded-opentype")
+  ,url(http://static.trulia-cdn.com/images/fonts/PostGroteskBook_20150623/PostGrotesk-Book.woff) format("woff")
+  ,url(http://static.trulia-cdn.com/images/fonts/PostGroteskBook_20150623/PostGrotesk-Book.ttf) format("truetype")
+  ,url(http://static.trulia-cdn.com/images/fonts/PostGroteskBook_20150623/PostGrotesk-Book.svg#PostGroteskRegular) format("svg");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
 }
-
+@font-face{
+  font-family:PostGrotesk;
+  src:url(http://static.trulia-cdn.com/images/fonts/PostGroteskMedium//PostGrotesk-Medium.eot);
+  src:url(http://static.trulia-cdn.com/images/fonts/PostGroteskMedium//PostGrotesk-Medium.eot?#iefix) format("embedded-opentype")
+  ,url(http://static.trulia-cdn.com/images/fonts/PostGroteskMedium//PostGrotesk-Medium.woff) format("woff")
+  ,url(http://static.trulia-cdn.com/images/fonts/PostGroteskMedium//PostGrotesk-Medium.ttf) format("truetype")
+  ,url(http://static.trulia-cdn.com/images/fonts/PostGroteskMedium//PostGrotesk-Medium.svg#PostGroteskBold) format("svg");
+  font-weight:600;
+  font-style:normal;
+  font-display:swap;
+}
 @font-face {
   font-family: 'shapes';
   src: url('./fonts/fontello.ttf');
@@ -20,7 +37,7 @@
   font-size: 24px;
   line-height: 2.0;
   font-style: normal;
-  font-family: postGrotesk;
+  font-family: PostGrotesk;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -29,10 +46,10 @@
   font-size: 20px;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-weight: 1000px;
+  font-weight: 400px;
   line-height: 2.0;
   font-style: normal;
-  font-family: postGrotesk;
+  font-family: PostGrotesk;
 }
 
 .neighborhood-overview-container {
@@ -41,7 +58,7 @@
   display: flex;
   border: 1px solid #e8e9ea;
   min-width: 480px;
-  max-width: 991px;
+  max-width: 700px;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -75,7 +92,7 @@
   font-weight: 100;
   line-height: 2.0;
   font-style: normal;
-  font-family: postGrotesk;
+  font-family: PostGrotesk;
 }
 
 .li-content {
@@ -89,33 +106,228 @@
 }
 
 .greyed {
+  font-family: PostGrotesk;
   color: #869099;
   font-size: 18px;
+  line-height: 25.2px;
+}
+
+.grey {
+  color: #474e52;
 }
 
 .locals-container {
-  position: relative;
+  padding:0px;
   min-width: 768px;
+  max-width: 950px;
   box-sizing: border-box;
   border: 1px solid #e8e9ea;
   border-radius: 4px;
   background-color: #f5f6f7;
-  padding: 20px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   
-  -webkit-flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   list-style-type:none;
+  -webkit-align-items: flex-start;
+  align-items: flex-start; 
+}
+
+.locals-part {
+  padding: 20px;
+}
+
+.local-map {
+  
+}
+
+.map-shot {
+  height: 191px;
+  width: 300px;
+  border: 1px solid #e8e9ea;
+  border-radius: 4px;
+}
+
+
+.questions-container {
+  
+  min-height: 356px;
+  min-width: 300px;
+}
+
+.h5 {
+  font-family: PostGrotesk;
+  font-weight: 600px;
+  font-size: 18px;
+  line-height: 25.2px;
+}
+
+.tell-us {
+  color: #3b4144;
+  font-family: PostGrotesk;
+  font-size: 15px;
+  margin-bottom: 5px;
+  line-height: 22.5px;
+}
+
+.question-stack {
+
+}
+
+.question {
+  color: #3b4144; 
+}
+
+.front-card {
+  border: 1px solid #e8e9ea;
+  border-radius: 4px;
+  margin-top: 15px;
+  max-width: 298px;
+  min-height: 287px;
+  background-color: #fff;
 }
 
 
 
-.map-shot {
-  padding: 20px;
-  min-height: 191px;
-  min-width: 200px;
+.front-contents {
+  padding-top: 30px;
+  max-width: 248px;
+  min-height: 232px;
+  padding: 25px;
+}
+
+.answers {
+  margin-top: 30px;
+  margin-right: 1px;
+  margin-left: 1px;
+  margin-bottom: 10px;
+  display: flex;
+  position: center;
+  justify-content: center;
+}
+
+.ask {
+  min-width: 80px;
+  color: #20c063;
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid #20c063;
+  font-family: PostGrotesk;
+  font-size: 18px;
+  line-height: 28px; 
+  padding: 18px;
+  padding-top: 10.8px;
+  padding-bottom: 9px;
+  position: center;
+}
+
+.ask0{
+  margin-right: 10px;
+}
+
+.text-center {
+  text-align: center;
+  line-height: 28px;
+}
+
+.question-skip {  
+  font-family: PostGrotesk;
+  font-size: 15px;
+  color: #869099;
+  line-height: 1.2;
+  border: 1px;
+  padding: 15px;
+  padding-top: 9px;
+  padding-bottom: 7.5px;
+  text-align: center;
+}
+
+.greyed-small {
+  font-family: PostGrotesk;
+  color: #869099;
+  font-size: 15px;
+  line-height: 22.5px;
+}
+
+.features-container {
+  padding: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-top:  5px;
+  flex-grow: 0;
+}
+
+.feature-line {
+  padding: 0px;
+  display: flex;
+  justify-content: flex-start;
+  list-style-type:none;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  flex-grow: 0; 
+  flex-direction: row;
+}
+
+.thumbs-image {
+  line-height: 1.5;
+
+}
+
+.thumbs-container {
+  margin-bottom: 5px;
+  margin-right: 5px;
+  padding-right: 10px;
+  list-style-type:none;
+}
+
+.percent {
+  padding: 5px;
+  border-radius: 4px;
+  background-color: #e3f7eb;
+}
+
+.num-container {
+  min-height: 22px;
+  min-width: 40px;
+  text-align: center;
+}
+
+.surround {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 15px;
+}
+
+.feature-desc {
+  font-size: 15px;
+  line-height: 22.5px;
+  font-family: PostGrotesk;
+  color: #3b4144;
+}
+
+.desc-container {
+  margin-top: 5px;
+  padding-top: 5px 
+}
+
+
+.more-features-container {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.see-more {
+  color: #10a75f;
+  font-size: 15px;
+  font-family: PostGrotesk;
+  line-height: 22.5px;
+  cursor: pointer;
+}
+
+.see-more::after {
+  font-family: shapes;
+  content: '  ';
 }
