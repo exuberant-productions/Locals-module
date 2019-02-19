@@ -9,13 +9,18 @@ class Features extends React.Component {
   }
 
   render() {
+    const {
+      questions,
+      answerCount,
+      neighborhoodName,
+    } = this.props;
     return (
       <div>
         <div className="h5">
           Neighborhood Features
         </div>
         <div className="greyed-small" >
-          % of Locals who say Cow Hollow has these qualities
+          {`% of Locals who say ${neighborhoodName} has these qualities`}
         </div>
         <ul className="features-container">
           <li className="thumbs-container">

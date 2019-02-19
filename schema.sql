@@ -47,10 +47,10 @@ CREATE TABLE feature_questions (
   PRIMARY KEY (id)
 );
 
-INSERT INTO neighborhoods (name, zip) VALUES ("rc", 94618);
-INSERT INTO neighborhoods (name, zip) VALUES ("matt", 94702);
-INSERT INTO neighborhoods (name, zip) VALUES ("sang", 94710);
-INSERT INTO neighborhoods (name, zip) VALUES ("aimen", 94707);
+INSERT INTO neighborhoods (name, zip) VALUES ("rc's neighborhood", 94618);
+INSERT INTO neighborhoods (name, zip) VALUES ("matt's neighborhood", 94702);
+INSERT INTO neighborhoods (name, zip) VALUES ("sang's neighborhood", 94710);
+INSERT INTO neighborhoods (name, zip) VALUES ("aimen's neighborhood", 94707);
 
 
 
