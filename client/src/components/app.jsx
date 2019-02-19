@@ -26,22 +26,43 @@ class App extends React.Component {
       fetch('http://localhost:3004/reviews/1').then(value => value.json()),
     ]).then(([dat1, dat2, dat3, dat4, dat5]) => ([dat1, dat2, dat3, dat4, dat5])).then(([dataGot1, dataGot2, dataGot3, dataGot4, dataGot5]) => {
       this.setState({
-        neighborhood: dataGot1,
+        neighborhood: dataGot1[0],
         homesOnSale: dataGot2,
         questions: dataGot3,
         answerCount: dataGot4,
         reviews: dataGot5,
       });
-      console.log(this.state.questions);
+      console.log(this.state.neighborhood);
     });
   }
 
   render() {
-    // const { neighborhood } = this.state;
+    const { 
+      neighborhood,
+      homesOnSale,
+      questions,
+      answerCount,
+      reviews 
+    } = this.state;
+
+    if(
+      !neighborhood
+      || !homesOnSale
+      || !questions
+      || !answerCount
+      || !reviews
+    ) {
+      return (
+        <div>
+          {/* {Nothing to report} */}
+        </div>
+      )
+    }
+
     return (
       <div>
         <div>
-          <Overview />
+          <Overview neighborhood={neighborhood} homesOnSale={homesOnSale} />
         </div>
         <div>
           <Locals />
