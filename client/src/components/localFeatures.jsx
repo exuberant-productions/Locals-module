@@ -45,7 +45,7 @@ class Features extends React.Component {
               <li>
                 <div className="desc-container"> 
                   <img className="thumbs-image" src="./media/restaurant.svg" alt="restaurant-icon" />
-                  <span className="feature-desc"> It's walkable to restaurants</span>
+                  <span className="feature-desc"> It's walkable to restaurants </span>
                 </div>
               </li>
             </ul>
@@ -68,7 +68,7 @@ class Features extends React.Component {
           </li>          
         </ul>
         <a className="see-more">
-          See more 
+          See more
         </a>
       </div>
     );
