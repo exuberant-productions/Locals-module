@@ -9,13 +9,18 @@ class Features extends React.Component {
   }
 
   render() {
+    const {
+      questions,
+      answerCount,
+      neighborhoodName,
+    } = this.props;
     return (
       <div>
         <div className="h5">
           Neighborhood Features
         </div>
         <div className="greyed-small" >
-          % of Locals who say Cow Hollow has these qualities
+          {`% of Locals who say ${neighborhoodName} has these qualities`}
         </div>
         <ul className="features-container">
           <li className="thumbs-container">
@@ -45,7 +50,7 @@ class Features extends React.Component {
               <li>
                 <div className="desc-container"> 
                   <img className="thumbs-image" src="./media/restaurant.svg" alt="restaurant-icon" />
-                  <span className="feature-desc"> It's walkable to restaurants</span>
+                  <span className="feature-desc"> It's walkable to restaurants </span>
                 </div>
               </li>
             </ul>
@@ -68,7 +73,7 @@ class Features extends React.Component {
           </li>          
         </ul>
         <a className="see-more">
-          See more 
+          See more
         </a>
       </div>
     );

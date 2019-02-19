@@ -87,12 +87,14 @@
 }
 
 .words {
+  text-decoration: none;
   margin-top: 5px;
   margin-bottom: 5px;
   font-weight: 100;
   line-height: 2.0;
   font-style: normal;
   font-family: PostGrotesk;
+  cursor: pointer;
 }
 
 .li-content {
