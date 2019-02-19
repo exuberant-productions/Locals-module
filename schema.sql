@@ -1,3 +1,5 @@
+-- To use mysql: mysql -u root -p (no password when asked)
+-- To run a .sql file to create database, tables, seed data do : mysql -u root -p < schema.sql
 DROP DATABASE IF EXISTS NeighborhoodsData;
 
 CREATE DATABASE NeighborhoodsData;
@@ -8,6 +10,7 @@ USE NeighborhoodsData;
 CREATE TABLE neighborhoods (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
+  zip INT NOT NULL,
   PRIMARY KEY (id)
 );
 
@@ -44,10 +47,10 @@ CREATE TABLE feature_questions (
   PRIMARY KEY (id)
 );
 
-INSERT INTO neighborhoods (name) VALUES ("rc");
-INSERT INTO neighborhoods (name) VALUES ("matt");
-INSERT INTO neighborhoods (name) VALUES ("sang");
-INSERT INTO neighborhoods (name) VALUES ("aimen");
+INSERT INTO neighborhoods (name, zip) VALUES ("rc's neighborhood", 94618);
+INSERT INTO neighborhoods (name, zip) VALUES ("matt's neighborhood", 94702);
+INSERT INTO neighborhoods (name, zip) VALUES ("sang's neighborhood", 94710);
+INSERT INTO neighborhoods (name, zip) VALUES ("aimen's neighborhood", 94707);
 
 
 
