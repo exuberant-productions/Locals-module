@@ -1,9 +1,3 @@
-@import "compass/css3";
-
-@font-face {
-  font-family: 'myHelvari';
-  src: url('./fonts/ufonts.com_helvari.ttf');
-}
 
 @font-face{
   font-family:PostGrotesk;
@@ -29,7 +23,9 @@
 }
 @font-face {
   font-family: 'shapes';
-  src: url('./fonts/fontello.ttf');
+  src:url(http://s3-us-west-1.amazonaws.com/affordability-module/fontello.ttf);
+  font-weight: normal;
+  font-style: normal;
 }
 
 .h3 {
