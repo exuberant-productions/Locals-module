@@ -21,6 +21,10 @@ function priceRanger(arrayOfHomes) {
   };
 }
 
+// function featureOrdering(featureSet) {
+
+// }
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -94,15 +98,17 @@ class App extends React.Component {
     }
 
     return (
-      <div>
+      <div className="main-container">
         <div>
-          <Overview neighborhood={neighborhood} priceRange={priceRange} numberOfHouses={numberOfHouses} />
-        </div>
-        <div>
-          <Locals questions={questions} neighborhood={neighborhood} answerCount={answerCount} />
-        </div>
-        <div>
-          {/* {neighborhood} */}
+          <div>
+            <Overview neighborhood={neighborhood} priceRange={priceRange} numberOfHouses={numberOfHouses} />
+          </div>
+          <div>
+            <Locals questions={questions} neighborhood={neighborhood} answerCount={answerCount} />
+          </div>
+          <div>
+            {/* {neighborhood} */}
+          </div>
         </div>
       </div>
     );

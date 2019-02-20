@@ -22,6 +22,7 @@ class Features extends React.Component {
         <div className="greyed-small">
           {`% of Locals who say ${neighborhoodName} has these qualities`}
         </div>
+  
         <ul className="features-container">
           <li className="thumbs-container">
             <ul className="feature-line">
