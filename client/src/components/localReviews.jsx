@@ -2,7 +2,7 @@ import React from 'react';
 
 const Reviews = (props) => {
   const {
-  reviews,
+    reviews,
   } = props;
   return (
     <div className="comp-container">
@@ -15,7 +15,10 @@ const Reviews = (props) => {
                 <div>
                   {value.review}
                 </div>
-                <div> <br/> {value.user} </div>
+                <div>
+                  <br />
+                  {value.user}
+                </div>
               </li>
             );
           })

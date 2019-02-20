@@ -81,7 +81,7 @@ class App extends React.Component {
       fetch('http://localhost:3004/homes/1').then(value => value.json()),
       fetch('http://localhost:3004/questions').then(value => value.json()),
       fetch('http://localhost:3004/features/1').then(value => value.json()),
-      fetch('http://localhost:3004/reviews/1').then(value => value.json()),
+      fetch('http://localhost:3004/reviews/4').then(value => value.json()),
     ]).then(([dat1, dat2, dat3, dat4, dat5]) => ([dat1, dat2, dat3, dat4, dat5]))
       .then(([dataGot1, dataGot2, dataGot3, dataGot4, dataGot5]) => {
         this.setState({
