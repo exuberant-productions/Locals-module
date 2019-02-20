@@ -28,6 +28,12 @@
   font-style: normal;
 }
 
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .h3 {
   font-weight: 400px;
   font-size: 24px;
@@ -60,9 +66,10 @@
 }
 
 .neighborhood-overview-image {
-  width: 40%;
-  height: 40%;
+  height: auto;
+  width: auto;
   max-width: 280px;
+  max-height: 175px;
   object-fit: cover;
 }
 
@@ -259,6 +266,7 @@
   margin-bottom: 5px;
   padding-top:  5px;
   flex-grow: 0;
+  
 }
 
 .feature-line {
@@ -341,6 +349,10 @@
   padding-right: 10px;
   margin-bottom: 5px;
   color: #3b4144;
+}
+
+.comp-container {
+  margin-top: 20px;
 }
 
 .reviews-container {

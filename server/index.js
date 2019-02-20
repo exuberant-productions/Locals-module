@@ -6,6 +6,12 @@ const db = require('../database/index.js');
 
 const app = express();
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
 
 app.set('port', 3004);
 app.use(bodyParser.json());
@@ -46,7 +52,7 @@ app.get('/questions', (request, response) => {
 
 app.get('/features/:neighborNum', (request, response) => {
   const neighborNumber = parseInt((request.params.neighborNum), 10);
-  db.neighborHomes(neighborNumber, (err, data) => {
+  db.featureStats(neighborNumber, (err, data) => {
     if (err) {
       throw (err);
     } else {
@@ -57,7 +63,7 @@ app.get('/features/:neighborNum', (request, response) => {
 
 app.get('/reviews/:neighborNum', (request, response) => {
   const neighborNumber = parseInt((request.params.neighborNum), 10);
-  db.neighborHomes(neighborNumber, (err, data) => {
+  db.reviews(neighborNumber, (err, data) => {
     if (err) {
       throw (err);
     } else {

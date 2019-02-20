@@ -17,6 +17,7 @@ class Locals extends React.Component {
       questions,
       neighborhood,
       answerCount,
+      reviews,
     } = this.props;
     const { questionNum } = this.state;
     return (
@@ -32,7 +33,7 @@ class Locals extends React.Component {
             </div>
             <div>
               <Questions
-                questions={questions} 
+                questions={questions}
                 questionNum={questionNum}
                 neighborhoodName={neighborhood.name}
               />
@@ -47,7 +48,7 @@ class Locals extends React.Component {
               />
             </div>
             <div>
-              <Reviews />
+              <Reviews reviews={reviews} />
             </div>
           </li>
         </ul>

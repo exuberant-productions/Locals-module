@@ -46,7 +46,7 @@ CREATE TABLE feature_questions (
   id INT NOT NULL AUTO_INCREMENT,
   descript VARCHAR(255) NOT NULL,
   question TEXT NOT NULL,
-  image_link TEXT,
+  image_link TEXT NOT NULL,
   PRIMARY KEY (id)
 );
 
@@ -63,9 +63,9 @@ INSERT INTO neighborhoods (name, zip, image_link, map_data) VALUES ("sang's neig
 INSERT INTO neighborhoods (name, zip, image_link, map_data) VALUES ("aimen's neighborhood", 94707, "https://s3-us-west-1.amazonaws.com/neighborhoods-trulia/south-boston-neighborhood-guide.jpg", "https://s3-us-west-1.amazonaws.com/maps-trulia/Screen+Shot+2019-02-13+at+7.52.50+AM.png" );
 
 
-INSERT INTO icons (name, link) VALUES ("Thumbs Up", "https://s3-us-west-1.amazonaws.com/icons-trulia/thumbs.svg")
-INSERT INTO icons (name, link) VALUES ("Sale", "https://s3-us-west-1.amazonaws.com/icons-trulia/sale_icon.svg")
-INSERT INTO icons (name, link) VALUES ("Home on Sale", "https://s3-us-west-1.amazonaws.com/icons-trulia/home_icon.svg")
+INSERT INTO icons (name, link) VALUES ("Thumbs Up", "https://s3-us-west-1.amazonaws.com/icons-trulia/thumbs.svg");
+INSERT INTO icons (name, link) VALUES ("Sale", "https://s3-us-west-1.amazonaws.com/icons-trulia/sale_icon.svg");
+INSERT INTO icons (name, link) VALUES ("Home on Sale", "https://s3-us-west-1.amazonaws.com/icons-trulia/home_icon.svg");
 
 
 
