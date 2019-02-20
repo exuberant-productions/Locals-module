@@ -19,7 +19,7 @@ class Features extends React.Component {
         <div className="h5">
           Neighborhood Features
         </div>
-        <div className="greyed-small" >
+        <div className="greyed-small">
           {`% of Locals who say ${neighborhoodName} has these qualities`}
         </div>
         <ul className="features-container">
@@ -27,13 +27,13 @@ class Features extends React.Component {
             <ul className="feature-line">
               <li className="percent surround">
                 <span className="thumbs-container">
-                  <img className="thumbs-image" src="./media/thumbs.svg" alt="thumbs-icon" />
+                  <img className="thumbs-image" src="https://s3-us-west-1.amazonaws.com/icons-trulia/thumbs.svg" alt="thumbs-icon" />
                   <span className="tell-us"> 98%</span>
                 </span>
               </li>
               <li>
                 <div className="desc-container">
-                  <img className="thumbs-image" src="./media/sidewalk.svg" alt="sidewalk-icon" />
+                  <img className="thumbs-image" src="https://s3-us-west-1.amazonaws.com/icons-trulia/sidewalk.svg" alt="sidewalk-icon" />
                   <span className="feature-desc"> There are sidewalks</span>
                 </div>
               </li>
@@ -43,13 +43,13 @@ class Features extends React.Component {
             <ul className="feature-line">
               <li className="percent surround">
                 <span className="thumbs-container">
-                  <img className="thumbs-image" src="./media/thumbs.svg" alt="thumbs-icon" />
+                  <img className="thumbs-image" src="https://s3-us-west-1.amazonaws.com/icons-trulia/thumbs.svg" alt="thumbs-icon" />
                   <span className="tell-us"> 94%</span>
                 </span>
               </li>
               <li>
                 <div className="desc-container"> 
-                  <img className="thumbs-image" src="./media/restaurant.svg" alt="restaurant-icon" />
+                  <img className="thumbs-image" src="https://s3-us-west-1.amazonaws.com/icons-trulia/restaurant.svg" alt="restaurant-icon" />
                   <span className="feature-desc"> It's walkable to restaurants </span>
                 </div>
               </li>
@@ -59,13 +59,13 @@ class Features extends React.Component {
             <ul className="feature-line">
               <li className="percent surround">
                 <span className="thumbs-container">
-                  <img className="thumbs-image" src="./media/thumbs.svg" alt="thumbs-icon" />
+                  <img className="thumbs-image" src="https://s3-us-west-1.amazonaws.com/icons-trulia/thumbs.svg" alt="thumbs-icon" />
                   <span className="tell-us"> 93%</span>
                 </span>
               </li>
               <li>
                 <div className="desc-container"> 
-                  <img className="thumbs-image" src="./media/dog.svg" alt="restaurant-icon" />
+                  <img className="thumbs-image" src="https://s3-us-west-1.amazonaws.com/icons-trulia/dog.svg" alt="dog-icon" />
                   <span className="feature-desc"> It's dog friendly</span>
                 </div>
               </li>

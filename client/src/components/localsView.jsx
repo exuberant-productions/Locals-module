@@ -31,12 +31,20 @@ class Locals extends React.Component {
               <LocalMap />
             </div>
             <div>
-              <Questions questions={questions} questionNum={questionNum} neighborhoodName={neighborhood.name} />
+              <Questions
+                questions={questions} 
+                questionNum={questionNum}
+                neighborhoodName={neighborhood.name}
+              />
             </div>
           </li>
           <li className="locals-part">
             <div>
-              <Features questions={questions} answerCount={answerCount} neighborhoodName={neighborhood.name} />
+              <Features
+                questions={questions}
+                answerCount={answerCount}
+                neighborhoodName={neighborhood.name}
+              />
             </div>
             <div>
               <Reviews />
