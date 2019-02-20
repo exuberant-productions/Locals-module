@@ -1,6 +1,7 @@
 import React from 'react';
 import Overview from './overview';
 import Locals from './localsView';
+import '../../../public/styles.css';
 // import $ from 'jquery';
 
 function priceRanger(arrayOfHomes) {

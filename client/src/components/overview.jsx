@@ -10,21 +10,21 @@ const Overview = (props) => {
     <div className="neighborhood-overview-main">
       <div className="h3"> Neighborhood Overview </div>
       <span className="neighborhood-overview-container">
-        <img className="neighborhood-overview-image" src="https://cdn.vox-cdn.com/thumbor/8r8BPzz1c43V-euim7Oryo_bBYA=/0x0:1200x800/1200x800/filters:focal(504x304:696x496)/cdn.vox-cdn.com/uploads/chorus_image/image/57847271/Corktown_101.0.jpg" alt="neighborhood" />
+        <img className="neighborhood-overview-image" src="https://s3-us-west-1.amazonaws.com/neighborhoods-trulia/CAB6UJHPKRB7LKSOTDWIWHR6V4.jpg" alt="neighborhood" />
         <ul className="overview-content">
           <li>
-            <div className="h4"> 
+            <div className="h4">
               {neighborhood.name.charAt(0).toUpperCase() + neighborhood.name.slice(1)} 
             </div>
           </li>
           <li className="li-content">
-            <img className="icon" src="./media/sale_icon.svg" alt="sale-icon" />
+            <img className="icon" src="https://s3-us-west-1.amazonaws.com/icons-trulia/sale_icon.svg" alt="sale-icon" />
             <span className="words">
               {`${numberOfHouses} Homes For Sale`}
             </span>
           </li>
           <li className="li-content">
-            <img className="icon" src="./media/home_icon.svg" alt="home-icon" />
+            <img className="icon" src="https://s3-us-west-1.amazonaws.com/icons-trulia/home_icon.svg" alt="home-icon" />
             <span className="words">
               {`Buy: $ ${priceRange.lowest} - $ ${priceRange.highest}`}
             </span>

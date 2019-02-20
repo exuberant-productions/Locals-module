@@ -11,6 +11,8 @@ CREATE TABLE neighborhoods (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
   zip INT NOT NULL,
+  image_link TEXT,
+  map_data TEXT,
   PRIMARY KEY (id)
 );
 
@@ -44,13 +46,26 @@ CREATE TABLE feature_questions (
   id INT NOT NULL AUTO_INCREMENT,
   descript VARCHAR(255) NOT NULL,
   question TEXT NOT NULL,
+  image_link TEXT,
   PRIMARY KEY (id)
 );
 
-INSERT INTO neighborhoods (name, zip) VALUES ("rc's neighborhood", 94618);
-INSERT INTO neighborhoods (name, zip) VALUES ("matt's neighborhood", 94702);
-INSERT INTO neighborhoods (name, zip) VALUES ("sang's neighborhood", 94710);
-INSERT INTO neighborhoods (name, zip) VALUES ("aimen's neighborhood", 94707);
+CREATE TABLE icons (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  link TEXT,
+  PRIMARY KEY (id) 
+);
+
+INSERT INTO neighborhoods (name, zip, image_link, map_data) VALUES ("rc's neighborhood", 94618, "https://s3-us-west-1.amazonaws.com/neighborhoods-trulia/CAB6UJHPKRB7LKSOTDWIWHR6V4.jpg", "https://s3-us-west-1.amazonaws.com/maps-trulia/Screen+Shot+2019-02-13+at+7.52.50+AM.png" );
+INSERT INTO neighborhoods (name, zip, image_link, map_data) VALUES ("matt's neighborhood", 94702, "https://s3-us-west-1.amazonaws.com/neighborhoods-trulia/Corktown_101.0.jpg", "https://s3-us-west-1.amazonaws.com/maps-trulia/Screen+Shot+2019-02-13+at+7.52.50+AM.png" );
+INSERT INTO neighborhoods (name, zip, image_link, map_data) VALUES ("sang's neighborhood", 94710, "https://s3-us-west-1.amazonaws.com/neighborhoods-trulia/South-Main-Neighborhood-Category-2.jpg", "https://s3-us-west-1.amazonaws.com/maps-trulia/Screen+Shot+2019-02-13+at+7.52.50+AM.png" );
+INSERT INTO neighborhoods (name, zip, image_link, map_data) VALUES ("aimen's neighborhood", 94707, "https://s3-us-west-1.amazonaws.com/neighborhoods-trulia/south-boston-neighborhood-guide.jpg", "https://s3-us-west-1.amazonaws.com/maps-trulia/Screen+Shot+2019-02-13+at+7.52.50+AM.png" );
+
+
+INSERT INTO icons (name, link) VALUES ("Thumbs Up", "https://s3-us-west-1.amazonaws.com/icons-trulia/thumbs.svg")
+INSERT INTO icons (name, link) VALUES ("Sale", "https://s3-us-west-1.amazonaws.com/icons-trulia/sale_icon.svg")
+INSERT INTO icons (name, link) VALUES ("Home on Sale", "https://s3-us-west-1.amazonaws.com/icons-trulia/home_icon.svg")
 
 
 
@@ -72,22 +87,22 @@ INSERT INTO feature_stats (neighborhood_id , question_id , yes_count , no_count)
 INSERT INTO feature_stats (neighborhood_id , question_id , yes_count , no_count) VALUES (4, 16, 10, 4);
 
 
-INSERT INTO feature_questions (descript, question) VALUES ("There are sidewalks", "Does your neighborhood have sidewalks?");
-INSERT INTO feature_questions (descript, question) VALUES ("It's walkable to restaurants", "Can you walk to restaurants in your neighborhood?");
-INSERT INTO feature_questions (descript, question) VALUES ("It's dog friendly", "Do you often see people walking dogs in your neighborhood?");
-INSERT INTO feature_questions (descript, question) VALUES ("It's walkable to grocery stores", "Can you walk to grocery stores in your neighborhood?");
-INSERT INTO feature_questions (descript, question) VALUES ("Streets are well-lit", "Are sidewalks well-lit with street lights?");
-INSERT INTO feature_questions (descript, question) VALUES ("People would walk alone at night", "Would you go for walks alone after dark in your neighborhood?");
-INSERT INTO feature_questions (descript, question) VALUES ("There's holiday spirit", "Do you decorate your home for any holidays?");
-INSERT INTO feature_questions (descript, question) VALUES ("They plan to stay for at least 5 years", "Do you plan to live in your neighborhood for 5 years or more?");
-INSERT INTO feature_questions (descript, question) VALUES ("Neighbors are friendly", "Do you know any of your neighbors on a first-name basis?");
-INSERT INTO feature_questions (descript, question) VALUES ("Yards are well-kept", "Do you take care of your front yard?");
-INSERT INTO feature_questions (descript, question) VALUES ("Parking is easy", "Can you find parking easily in the evening and on weekends?");
-INSERT INTO feature_questions (descript, question) VALUES ("Kids play outside", "Do you regularly see kids playing outside?");
-INSERT INTO feature_questions (descript, question) VALUES ("It's quiet", "Can you regularly hear street noise inside your home?");
-INSERT INTO feature_questions (descript, question) VALUES ("There's wildlife", "Have you seen any wild animals in your neighborhood?");
-INSERT INTO feature_questions (descript, question) VALUES ("There are community events", "Have you attended a community event in your neighborhood, like a block party or BBQ?");
-INSERT INTO feature_questions (descript, question) VALUES ("Car is needed", "Do you feel the need to own a car to get around?");
+INSERT INTO feature_questions (descript, question, image_link) VALUES ("There are sidewalks", "Does your neighborhood have sidewalks?", "https://s3-us-west-1.amazonaws.com/icons-trulia/sidewalk.svg");
+INSERT INTO feature_questions (descript, question, image_link) VALUES ("It's walkable to restaurants", "Can you walk to restaurants in your neighborhood?", "https://s3-us-west-1.amazonaws.com/icons-trulia/restaurant.svg");
+INSERT INTO feature_questions (descript, question, image_link) VALUES ("It's dog friendly", "Do you often see people walking dogs in your neighborhood?", "https://s3-us-west-1.amazonaws.com/icons-trulia/dog.svg");
+INSERT INTO feature_questions (descript, question, image_link) VALUES ("It's walkable to grocery stores", "Can you walk to grocery stores in your neighborhood?", "https://s3-us-west-1.amazonaws.com/icons-trulia/grocery_cart_icon.svg");
+INSERT INTO feature_questions (descript, question, image_link) VALUES ("Streets are well-lit", "Are sidewalks well-lit with street lights?", "https://s3-us-west-1.amazonaws.com/icons-trulia/street_light_icon.svg");
+INSERT INTO feature_questions (descript, question, image_link) VALUES ("People would walk alone at night", "Would you go for walks alone after dark in your neighborhood?", "https://s3-us-west-1.amazonaws.com/icons-trulia/nigh_icon.svg");
+INSERT INTO feature_questions (descript, question, image_link) VALUES ("There's holiday spirit", "Do you decorate your home for any holidays?", "https://s3-us-west-1.amazonaws.com/icons-trulia/holiday_icon.svg");
+INSERT INTO feature_questions (descript, question, image_link) VALUES ("They plan to stay for at least 5 years", "Do you plan to live in your neighborhood for 5 years or more?", "https://s3-us-west-1.amazonaws.com/icons-trulia/stay_long_icon.svg");
+INSERT INTO feature_questions (descript, question, image_link) VALUES ("Neighbors are friendly", "Do you know any of your neighbors on a first-name basis?", "https://s3-us-west-1.amazonaws.com/icons-trulia/friendly_icon.svg");
+INSERT INTO feature_questions (descript, question, image_link) VALUES ("Yards are well-kept", "Do you take care of your front yard?", "https://s3-us-west-1.amazonaws.com/icons-trulia/neat_yards.svg");
+INSERT INTO feature_questions (descript, question, image_link) VALUES ("Parking is easy", "Can you find parking easily in the evening and on weekends?", "https://s3-us-west-1.amazonaws.com/icons-trulia/easy_parking.svg");
+INSERT INTO feature_questions (descript, question, image_link) VALUES ("Kids play outside", "Do you regularly see kids playing outside?", "https://s3-us-west-1.amazonaws.com/icons-trulia/play_outside.svg");
+INSERT INTO feature_questions (descript, question, image_link) VALUES ("It's quiet", "Can you regularly hear street noise inside your home?", "https://s3-us-west-1.amazonaws.com/icons-trulia/quite_icon.svg");
+INSERT INTO feature_questions (descript, question, image_link) VALUES ("There's wildlife", "Have you seen any wild animals in your neighborhood?", "https://s3-us-west-1.amazonaws.com/icons-trulia/wildlife_icon.svg");
+INSERT INTO feature_questions (descript, question, image_link) VALUES ("There are community events", "Have you attended a community event in your neighborhood, like a block party or BBQ?", "https://s3-us-west-1.amazonaws.com/icons-trulia/community_icon.svg");
+INSERT INTO feature_questions (descript, question, image_link) VALUES ("Car is needed", "Do you feel the need to own a car to get around?", "https://s3-us-west-1.amazonaws.com/icons-trulia/car_icon.svg");
 
 
 
