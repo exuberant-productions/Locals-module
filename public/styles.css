@@ -265,6 +265,7 @@
   margin-bottom: 5px;
   padding-top:  5px;
   flex-grow: 0;
+  
 }
 
 .feature-line {
@@ -347,6 +348,10 @@
   padding-right: 10px;
   margin-bottom: 5px;
   color: #3b4144;
+}
+
+.comp-container {
+  margin-top: 20px;
 }
 
 .reviews-container {
