@@ -18,6 +18,17 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, '/../public')));
 
+app.get('/home/:neighborNum', (request, response) => {
+  const neighborNumber = parseInt((request.params.neighborNum), 10);
+  db.home(neighborNumber, (err, data) => {
+    if (err) {
+      throw (err);
+    } else {
+      response.end(JSON.stringify(data));
+    }
+  });
+});
+
 app.get('/neighborhood/:neighborNum', (request, response) => {
   const neighborNumber = parseInt((request.params.neighborNum), 10);
   db.getNeighborhood(neighborNumber, (err, data) => {
@@ -40,7 +51,7 @@ app.get('/homes/:neighborNum', (request, response) => {
   });
 });
 
-app.get('/questions', (request, response) => {
+app.get('/questions/:neighborNum', (request, response) => {
   db.questions((err, data) => {
     if (err) {
       throw (err);

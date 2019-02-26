@@ -10,7 +10,7 @@ const Overview = (props) => {
     <div className="neighborhood-overview-main">
       <div className="h3"> Neighborhood Overview </div>
       <span className="neighborhood-overview-container">
-        <img className="neighborhood-overview-image" src="https://s3-us-west-1.amazonaws.com/neighborhoods-trulia/CAB6UJHPKRB7LKSOTDWIWHR6V4.jpg" alt="neighborhood" />
+        <img className="neighborhood-overview-image" src={neighborhood.image_link} alt="neighborhood" />
         <ul className="overview-content">
           <li>
             <div className="h4">

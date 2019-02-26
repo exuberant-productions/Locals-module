@@ -3,6 +3,17 @@ const mysqlConfig = require('./config.js');
 
 const connection = mysql.createConnection(mysqlConfig);
 
+function home(number, callback) {
+  connection.query(`SELECT * FROM homes WHERE id = ${number}`, (err, response) => {
+    if (err) {
+      console.log("here");
+      callback(err);
+    } else {
+      callback(null, response);
+    }
+  });
+}
+
 function getNeighborhood(number, callback) {
   connection.query(`SELECT * FROM neighborhoods WHERE id = ${number}`, (err, response) => {
     if (err) {
@@ -39,6 +50,8 @@ function featureStats(number, callback) {
       callback(err);
     } else {
       callback(null, response);
+      console.log("here");
+
     }
   });
 }
@@ -54,6 +67,7 @@ function reviews(number, callback) {
 }
 
 module.exports = {
+  home,
   getNeighborhood,
   neighborHomes,
   questions,
