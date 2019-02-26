@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  db:
+    build: dbDocker/
+
+
+  server:
+    build: .
+    depends_on: 
+      - 'db'
+    ports: 
+      - '3004:3004'

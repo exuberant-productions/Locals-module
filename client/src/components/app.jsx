@@ -53,7 +53,6 @@ function twoRandom(array) {
       break;
     }
   }
-  console.log(array);
   return [array[index1], array[index2]];
 }
 
@@ -61,6 +60,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      currentHome: undefined,
       neighborhood: undefined,
       homesOnSale: undefined,
       questions: undefined,
@@ -76,25 +76,60 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    Promise.all([
-      fetch('http://localhost:3004/neighborhood/1').then(value => value.json()),
-      fetch('http://localhost:3004/homes/1').then(value => value.json()),
-      fetch('http://localhost:3004/questions').then(value => value.json()),
-      fetch('http://localhost:3004/features/1').then(value => value.json()),
-      fetch('http://localhost:3004/reviews/4').then(value => value.json()),
-    ]).then(([dat1, dat2, dat3, dat4, dat5]) => ([dat1, dat2, dat3, dat4, dat5]))
-      .then(([dataGot1, dataGot2, dataGot3, dataGot4, dataGot5]) => {
-        this.setState({
-          neighborhood: dataGot1[0],
-          homesOnSale: dataGot2,
-          questions: dataGot3,
-          answerCount: featureOrdering(dataGot4),
-          reviews: twoRandom(dataGot5),
-          numberOfHouses: dataGot2.length,
-          priceRange: priceRanger(dataGot2),
+
+    let homeId = new URLSearchParams(window.location.search).get('homeId');
+    if (!homeId) homeId = 1;
+    const homeIdPromise = new Promise((resolve, reject) => {
+      fetch(`/home/${homeId}`).then(value => value.json()).then(value => value)
+        .then((value) => {
+          
+          this.setState({
+            currentHome: value,
+          }, () => {
+            const { currentHome } = this.state;
+            Promise.all([
+              fetch(`/neighborhood/${currentHome[0].neighborhood_id}`).then(value => value.json()),
+              fetch(`/homes/${currentHome[0].neighborhood_id}`).then(value => value.json()),
+              fetch(`/questions/${currentHome[0].neighborhood_id}`).then(value => value.json()),
+              fetch(`/features/${currentHome[0].neighborhood_id}`).then(value => value.json()),
+              fetch(`/reviews/${currentHome[0].neighborhood_id}`).then(value => value.json()),
+            ]).then(([dat1, dat2, dat3, dat4, dat5]) => ([dat1, dat2, dat3, dat4, dat5]))
+              .then(([dataGot1, dataGot2, dataGot3, dataGot4, dataGot5]) => {
+                // const { currentHome } = this.state;
+                this.setState({
+                  neighborhood: dataGot1[0],
+                  homesOnSale: dataGot2,
+                  questions: dataGot3,
+                  answerCount: featureOrdering(dataGot4),
+                  reviews: twoRandom(dataGot5),
+                  numberOfHouses: dataGot2.length,
+                  priceRange: priceRanger(dataGot2),
+                });
+              });
+          });
+
         });
-        console.log(this.state.reviews);
-      });
+    });
+
+    // homeIdPromise.then(Promise.all([
+    //   fetch(`/neighborhood/${1}`).then(value => value.json()),
+    //   fetch(`/homes/${1}`).then(value => value.json()),
+    //   fetch('/questions/').then(value => value.json()),
+    //   fetch(`/features/${1}`).then(value => value.json()),
+    //   fetch(`/reviews/${1}`).then(value => value.json()),
+    // ]).then(([dat1, dat2, dat3, dat4, dat5]) => ([dat1, dat2, dat3, dat4, dat5]))
+    //   .then(([dataGot1, dataGot2, dataGot3, dataGot4, dataGot5]) => {
+    //     // const { currentHome } = this.state;
+    //     this.setState({
+    //       neighborhood: dataGot1[0],
+    //       homesOnSale: dataGot2,
+    //       questions: dataGot3,
+    //       answerCount: featureOrdering(dataGot4),
+    //       reviews: twoRandom(dataGot5),
+    //       numberOfHouses: dataGot2.length,
+    //       priceRange: priceRanger(dataGot2),
+    //     });
+    //   }));
   }
 
   render() {

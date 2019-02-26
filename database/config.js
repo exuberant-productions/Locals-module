@@ -1,6 +1,6 @@
 module.exports = {
-  host: 'localhost',
+  host: 'db', //localhost 
   user: 'root',
-  password: '',
+  password: 'password', // no password
   database: 'NeighborhoodsData',
 };
